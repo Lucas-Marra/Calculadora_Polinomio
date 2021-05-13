@@ -74,11 +74,23 @@ public class Polinomio {
         System.out.print("\nP(x) = ");
         for (int i = this.grau; i >= 0; --i) {
             if (this.grau.equals(i)) {
-                System.out.print(this.termos[i] + "x^" + i);
+                if (i == 1){
+                    System.out.print(this.termos[i] + "x");
+                } else if (i == 0){
+                    System.out.print(this.termos[i] + "\n\n");
+                }else {
+                    System.out.print(this.termos[i] + "x^" + i);
+                }
             } else if (i > 0) {
-                System.out.print(this.termos[i] >= 0 ?
-                        " + " + this.termos[i] + "x^" + i :
-                        " - " + this.termos[i] * -1 + "x^" + i);
+                if (i == 1){
+                    System.out.print(this.termos[i] >= 0 ?
+                            " + " + this.termos[i] + "x" :
+                            " - " + this.termos[i] * -1 + "x");
+                }else {
+                    System.out.print(this.termos[i] >= 0 ?
+                            " + " + this.termos[i] + "x^" + i :
+                            " - " + this.termos[i] * -1 + "x^" + i);
+                }
             } else {
                 System.out.print(this.termos[i] >= 0 ?
                         " + " + this.termos[i] + "\n\n" :
